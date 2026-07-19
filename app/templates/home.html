@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}AI Solutions | Smarter Digital Systems for Growing Businesses{% endblock %}
+
+{% block content %}
+  <section class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_75%_20%,rgba(99,102,241,0.22),transparent_35%),linear-gradient(to_bottom,#020617,#0f172a)]"></div>
+    <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 sm:py-32 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-36">
+      <div>
+        <p class="mb-6 inline-flex items-center rounded-full border border-indigo-400/25 bg-indigo-400/10 px-4 py-2 text-sm font-semibold text-indigo-200">
+          Practical technology. Measurable business value.
+        </p>
+        <h1 class="max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          Smarter systems for businesses ready to <span class="text-indigo-400">move forward.</span>
+        </h1>
+        <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+          We design high-performing websites, useful AI solutions, and streamlined automations that help your team serve customers and operate with confidence.
+        </p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href="#consultation" class="rounded-lg bg-indigo-500 px-6 py-3.5 text-center font-semibold text-white shadow-xl shadow-indigo-500/20 transition hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-300">Book a Free Consultation</a>
+          <a href="#services" class="rounded-lg border border-white/15 bg-white/5 px-6 py-3.5 text-center font-semibold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400">Explore Our Services</a>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-lg" aria-hidden="true">
+        <div class="absolute -inset-8 rounded-full bg-indigo-500/10 blur-3xl"></div>
+        <div class="relative rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/30 backdrop-blur">
+          <div class="mb-6 flex items-center justify-between">
+            <span class="text-sm font-semibold text-slate-200">Your business, connected</span>
+            <span class="size-2.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
+              <div class="mb-8 size-10 rounded-xl bg-indigo-500/20 p-2.5">
+                <div class="size-full rounded-sm border-2 border-indigo-300"></div>
+              </div>
+              <p class="font-semibold text-white">Digital presence</p>
+              <p class="mt-1 text-sm text-slate-400">Clear, credible, conversion-focused</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
+              <div class="mb-8 flex size-10 items-center justify-center rounded-xl bg-cyan-500/20">
+                <div class="size-4 rounded-full border-2 border-cyan-300"></div>
+              </div>
+              <p class="font-semibold text-white">Smart automation</p>
+              <p class="mt-1 text-sm text-slate-400">Less busywork, smoother delivery</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/80 p-5 sm:col-span-2">
+              <div class="flex items-end gap-2">
+                <span class="h-8 flex-1 rounded-t bg-indigo-500/30"></span>
+                <span class="h-12 flex-1 rounded-t bg-indigo-500/50"></span>
+                <span class="h-16 flex-1 rounded-t bg-indigo-400/70"></span>
+                <span class="h-24 flex-1 rounded-t bg-indigo-400"></span>
+              </div>
+              <div class="mt-4 flex items-center justify-between">
+                <p class="font-semibold text-white">Built to support growth</p>
+                <span class="text-indigo-300">↗</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="bg-slate-50 py-24 text-slate-900 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-widest text-indigo-600">What we build</p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">Technology that solves real business problems.</h2>
+        <p class="mt-6 text-lg leading-8 text-slate-600">From your first customer touchpoint to the workflows behind the scenes, we create practical systems designed around how your business actually operates.</p>
+      </div>
+      <div class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
+        {% set services = [
+          ("01", "Custom Websites", "Professional, responsive websites that communicate your value clearly and turn interest into action."),
+          ("02", "AI Solutions", "Purpose-built AI tools that support your team, organize knowledge, and improve everyday decisions."),
+          ("03", "Business Automation", "Connected processes that reduce repetitive work and keep important tasks moving."),
+          ("04", "AI Chatbots", "Helpful conversational experiences that answer questions and guide customers at any hour."),
+          ("05", "Workflow Automation", "Reliable workflows that move information between the tools your business already uses."),
+          ("06", "Custom Software", "Focused internal tools and customer-facing applications built for your unique requirements.")
+        ] %}
+        {% for number, title, description in services %}
+          <article class="group bg-white p-8 transition hover:bg-indigo-50/70">
+            <p class="text-sm font-bold text-indigo-600">{{ number }}</p>
+            <h3 class="mt-8 text-xl font-bold">{{ title }}</h3>
+            <p class="mt-3 leading-7 text-slate-600">{{ description }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="industries" class="border-y border-white/10 bg-slate-900 py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-widest text-indigo-400">Who we serve</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">Grounded in the way your industry works.</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-400">Good technology starts with understanding the people, processes, and expectations behind your business.</p>
+        </div>
+        <ul class="grid gap-4 sm:grid-cols-2" aria-label="Industries served">
+          {% for industry in ["Construction Companies", "Law Firms", "Medical Offices", "Local Businesses", "Small and Medium Businesses"] %}
+            <li class="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-5 font-semibold text-slate-100">
+              <span class="grid size-8 shrink-0 place-items-center rounded-full bg-indigo-500/15 text-indigo-300" aria-hidden="true">✓</span>
+              {{ industry }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us" class="bg-white py-24 text-slate-900 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-widest text-indigo-600">Why AI Solutions</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">Clear strategy. Thoughtful execution. No unnecessary complexity.</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-600">We keep the focus on outcomes your team and customers can feel—not technology for technology’s sake.</p>
+        </div>
+        <div class="space-y-8">
+          {% set reasons = [
+            ("Business-first thinking", "Every recommendation begins with your goals, constraints, and day-to-day operations."),
+            ("Built around your team", "We design solutions people can understand, adopt, and rely on."),
+            ("A practical path forward", "Clear scope, direct communication, and purposeful technology from start to finish.")
+          ] %}
+          {% for title, description in reasons %}
+            <article class="border-l-2 border-indigo-500 pl-6">
+              <h3 class="text-xl font-bold">{{ title }}</h3>
+              <p class="mt-2 leading-7 text-slate-600">{{ description }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="consultation" class="bg-indigo-600 py-20 sm:py-24">
+    <div class="mx-auto max-w-5xl px-6 text-center lg:px-8">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-5xl">Let’s find the right next step for your business.</h2>
+      <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-indigo-100">Bring us the process that slows you down, the idea you want to launch, or the customer experience you want to improve. We’ll help you make sense of what’s possible.</p>
+      <a href="mailto:hello@example.com?subject=Free%20Consultation" class="mt-10 inline-flex rounded-lg bg-white px-7 py-4 font-semibold text-indigo-700 shadow-xl transition hover:bg-indigo-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Book a Free Consultation</a>
+    </div>
+  </section>
+{% endblock %}

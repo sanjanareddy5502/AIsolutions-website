@@ -1,0 +1,13 @@
+{
+  "name": "ai-solutions-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "css:build": "npx @tailwindcss/cli -i ./app/static/css/input.css -o ./app/static/css/output.css --minify",
+    "css:watch": "npx @tailwindcss/cli -i ./app/static/css/input.css -o ./app/static/css/output.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

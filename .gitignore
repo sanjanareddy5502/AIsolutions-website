@@ -30,3 +30,5 @@ Thumbs.db
 
 # IDE files that should remain local
 .idea/
+# Node.js dependencies
+node_modules/
