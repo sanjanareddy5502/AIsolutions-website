@@ -28,3 +28,18 @@ if (menuButton && mobileMenu) {
     }
   });
 }
+
+const consultationForm = document.querySelector("[data-consultation-form]");
+const formMessage = document.querySelector("[data-form-message]");
+
+if (consultationForm && formMessage) {
+  consultationForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!consultationForm.checkValidity()) {
+      consultationForm.reportValidity();
+      return;
+    }
+    formMessage.textContent =
+      "Thanks—this preview did not send your information. Backend processing will be connected in the next milestone.";
+  });
+}

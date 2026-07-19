@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="bg-slate-950 py-20 sm:py-28"><div class="mx-auto max-w-7xl px-6 lg:px-8"><p class="text-sm font-bold uppercase tracking-widest text-indigo-400">Industries</p><h1 class="mt-4 max-w-4xl text-4xl font-bold tracking-tight sm:text-6xl">Technology grounded in how your business works.</h1><p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300">Every engagement begins with listening: how work moves, where customers get stuck, and what a useful improvement looks like.</p></div></section>
+<section class="bg-white py-20 text-slate-900 sm:py-28"><div class="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-2 lg:px-8">
+{% set industries = [
+("Construction Companies","Keep project inquiries, estimates, documents, and routine updates easier to find and move forward.",["Professional project portfolio","Estimate request workflow","Internal project information tools"]),
+("Law Firms","Improve the client-facing experience and streamline administrative workflows while keeping professional judgment with the firm.",["Clear practice-area website","Inquiry intake routing","Internal knowledge organization"]),
+("Medical Offices","Make general office information easier to access and reduce repetitive administrative work without presenting medical advice.",["Office information website","General scheduling guidance","Administrative workflow support"]),
+("Local Businesses","Build a credible local presence and make it simple for nearby customers to understand services and get in touch.",["Local service website","Inquiry follow-up","Frequently asked questions"]),
+("Small and Medium Businesses","Replace scattered manual processes with focused systems that can evolve as the team grows.",["Operations dashboard","Customer onboarding workflow","Connected business tools"])
+] %}
+{% for title, description, uses in industries %}<article class="rounded-2xl border border-slate-200 bg-slate-50 p-8"><h2 class="text-2xl font-bold">{{ title }}</h2><p class="mt-4 leading-7 text-slate-600">{{ description }}</p><h3 class="mt-6 text-sm font-bold uppercase tracking-wider text-indigo-700">Where we can help</h3><ul class="mt-3 space-y-2 text-slate-700">{% for use in uses %}<li class="flex gap-3"><span class="text-indigo-600" aria-hidden="true">•</span>{{ use }}</li>{% endfor %}</ul></article>{% endfor %}
+</div></section>
+<section class="bg-slate-900 py-16"><div class="mx-auto max-w-4xl px-6 text-center"><h2 class="text-3xl font-bold">Your workflow is more important than your category.</h2><p class="mt-4 text-lg text-slate-300">If your industry is not listed, we can still explore the specific problem and determine whether we are a good fit.</p><a href="{{ url_for('contact') }}" class="mt-7 inline-flex rounded-lg bg-indigo-500 px-6 py-3 font-semibold hover:bg-indigo-400">Discuss your business</a></div></section>
+{% endblock %}

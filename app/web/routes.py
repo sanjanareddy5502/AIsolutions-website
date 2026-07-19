@@ -10,10 +10,34 @@ templates = Jinja2Templates(directory=TEMPLATES_DIR)
 router = APIRouter()
 
 
-@router.get("/", response_class=HTMLResponse)
-async def home(request: Request) -> HTMLResponse:
+def render_page(request: Request, template_name: str, page_title: str, current_page: str) -> HTMLResponse:
     return templates.TemplateResponse(
         request=request,
-        name="home.html",
-        context={},
+        name=template_name,
+        context={"page_title": page_title, "current_page": current_page},
     )
+
+
+@router.get("/", response_class=HTMLResponse)
+async def home(request: Request) -> HTMLResponse:
+    return render_page(request, "home.html", "Smarter Digital Systems for Growing Businesses", "home")
+
+
+@router.get("/services", response_class=HTMLResponse)
+async def services(request: Request) -> HTMLResponse:
+    return render_page(request, "services.html", "Services", "services")
+
+
+@router.get("/industries", response_class=HTMLResponse)
+async def industries(request: Request) -> HTMLResponse:
+    return render_page(request, "industries.html", "Industries", "industries")
+
+
+@router.get("/about", response_class=HTMLResponse)
+async def about(request: Request) -> HTMLResponse:
+    return render_page(request, "about.html", "About", "about")
+
+
+@router.get("/contact", response_class=HTMLResponse)
+async def contact(request: Request) -> HTMLResponse:
+    return render_page(request, "contact.html", "Contact", "contact")
