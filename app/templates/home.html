@@ -1,144 +1,115 @@
 {% extends "base.html" %}
-
+{% block meta_description %}Websites, data systems, automation, AI upgrades, SEO, and technical gap assessments designed from evidence—not assumptions.{% endblock %}
 {% block content %}
-  <section class="relative isolate overflow-hidden">
-    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_75%_20%,rgba(99,102,241,0.22),transparent_35%),linear-gradient(to_bottom,#020617,#0f172a)]"></div>
-    <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 sm:py-32 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-36">
-      <div>
-        <p class="mb-6 inline-flex items-center rounded-full border border-indigo-400/25 bg-indigo-400/10 px-4 py-2 text-sm font-semibold text-indigo-200">
-          Practical technology. Measurable business value.
-        </p>
-        <h1 class="max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-          Smarter systems for businesses ready to <span class="text-indigo-400">move forward.</span>
-        </h1>
-        <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-          We design high-performing websites, useful AI solutions, and streamlined automations that help your team serve customers and operate with confidence.
-        </p>
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a href="{{ url_for('contact') }}" class="rounded-lg bg-indigo-500 px-6 py-3.5 text-center font-semibold text-white shadow-xl shadow-indigo-500/20 transition hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-300">Book a Free Consultation</a>
-          <a href="{{ url_for('services') }}" class="rounded-lg border border-white/15 bg-white/5 px-6 py-3.5 text-center font-semibold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400">Explore Our Services</a>
-        </div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy-block reveal">
+      <span class="eyebrow">Evidence-led digital systems</span>
+      <h1>Find the friction.<br><em>Build the advantage.</em></h1>
+      <p class="hero-copy">We improve websites, repair unreliable data, automate repetitive work, and add AI where it creates real operating value.</p>
+      <div class="hero-actions">
+        <a class="button-primary" href="{{ url_for('book') }}">Book a strategy call <span aria-hidden="true">↗</span></a>
+        <a class="button-secondary" href="#business-lab">See how we think <span aria-hidden="true">↓</span></a>
       </div>
-      <a href="{{ url_for('services') }}" class="mt-8 inline-flex rounded font-semibold text-indigo-700 hover:text-indigo-900">View all services <span class="ml-2" aria-hidden="true">&rarr;</span></a>
+      <p class="principle"><span class="principle-dot" aria-hidden="true"></span><span><b>We listen. We measure. We design. We execute.</b><br>With data—not assumptions.</span></p>
+    </div>
 
-      <div class="relative mx-auto w-full max-w-lg" aria-hidden="true">
-        <div class="absolute -inset-8 rounded-full bg-indigo-500/10 blur-3xl"></div>
-        <div class="relative rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/30 backdrop-blur">
-          <div class="mb-6 flex items-center justify-between">
-            <span class="text-sm font-semibold text-slate-200">Your business, connected</span>
-            <span class="size-2.5 rounded-full bg-emerald-400"></span>
+    <div class="experience-stage reveal" aria-label="Illustrative business technology command center">
+      <div class="orbit"></div><div class="orbit o2"></div>
+      <div class="command-card" data-command-card>
+        <div class="command-top"><span>Business system overview</span><span class="live-pill">● live model</span></div>
+        <div class="command-body">
+          <div class="command-menu" aria-hidden="true">
+            <button class="active">Overview</button><button>Website</button><button>Data</button><button>Automation</button><button>AI layer</button>
           </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
-              <div class="mb-8 size-10 rounded-xl bg-indigo-500/20 p-2.5">
-                <div class="size-full rounded-sm border-2 border-indigo-300"></div>
-              </div>
-              <p class="font-semibold text-white">Digital presence</p>
-              <p class="mt-1 text-sm text-slate-400">Clear, credible, conversion-focused</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
-              <div class="mb-8 flex size-10 items-center justify-center rounded-xl bg-cyan-500/20">
-                <div class="size-4 rounded-full border-2 border-cyan-300"></div>
-              </div>
-              <p class="font-semibold text-white">Smart automation</p>
-              <p class="mt-1 text-sm text-slate-400">Less busywork, smoother delivery</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-slate-900/80 p-5 sm:col-span-2">
-              <div class="flex items-end gap-2">
-                <span class="h-8 flex-1 rounded-t bg-indigo-500/30"></span>
-                <span class="h-12 flex-1 rounded-t bg-indigo-500/50"></span>
-                <span class="h-16 flex-1 rounded-t bg-indigo-400/70"></span>
-                <span class="h-24 flex-1 rounded-t bg-indigo-400"></span>
-              </div>
-              <div class="mt-4 flex items-center justify-between">
-                <p class="font-semibold text-white">Built to support growth</p>
-                <span class="text-indigo-300">↗</span>
-              </div>
-            </div>
+          <div class="command-content">
+            <article class="signal-card"><small>Search visibility</small><strong>Technical review ready</strong><div class="signal-line"><i></i></div></article>
+            <article class="signal-card"><small>Data reliability</small><strong>Quality signals mapped</strong><div class="signal-line"><i style="width:58%"></i></div></article>
+            <article class="signal-card wide"><small>Connected workflow</small><strong>Inquiry → qualification → follow-up → insight</strong><div class="flow-map" aria-hidden="true"><span class="flow-node">W</span><span class="flow-link"></span><span class="flow-node">D</span><span class="flow-link"></span><span class="flow-node">A</span><span class="flow-link"></span><span class="flow-node">AI</span></div></article>
           </div>
         </div>
       </div>
+      <div class="floating-note"><small>Opportunity detected</small><strong>Remove repeated manual handoffs</strong></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="services" class="bg-slate-50 py-24 text-slate-900 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-sm font-bold uppercase tracking-widest text-indigo-600">What we build</p>
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">Technology that solves real business problems.</h2>
-        <p class="mt-6 text-lg leading-8 text-slate-600">From your first customer touchpoint to the workflows behind the scenes, we create practical systems designed around how your business actually operates.</p>
+<section id="business-lab" class="problem-lab">
+  <div class="section-shell">
+    <p class="section-kicker reveal">Business problem lab</p>
+    <h2 class="section-title reveal">What is getting in the way?</h2>
+    <div class="lab-grid">
+      <div class="problem-tabs" role="tablist" aria-label="Choose a business problem">
+        <button class="problem-tab active" role="tab" aria-selected="true" data-problem="website"><span>01</span><strong>Website feels outdated</strong><i>→</i></button>
+        <button class="problem-tab" role="tab" aria-selected="false" data-problem="data"><span>02</span><strong>Data cannot be trusted</strong><i>→</i></button>
+        <button class="problem-tab" role="tab" aria-selected="false" data-problem="manual"><span>03</span><strong>Too much work is manual</strong><i>→</i></button>
+        <button class="problem-tab" role="tab" aria-selected="false" data-problem="ai"><span>04</span><strong>AI feels unclear</strong><i>→</i></button>
+        <button class="problem-tab" role="tab" aria-selected="false" data-problem="seo"><span>05</span><strong>Customers cannot find us</strong><i>→</i></button>
+        <button class="problem-tab" role="tab" aria-selected="false" data-problem="assessment"><span>06</span><strong>We do not know what to fix first</strong><i>→</i></button>
       </div>
-      <div class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
-        {% set services = [
-          ("01", "Custom Websites", "Professional, responsive websites that communicate your value clearly and turn interest into action."),
-          ("02", "AI Solutions", "Purpose-built AI tools that support your team, organize knowledge, and improve everyday decisions."),
-          ("03", "Business Automation", "Connected processes that reduce repetitive work and keep important tasks moving."),
-          ("04", "AI Chatbots", "Helpful conversational experiences that answer questions and guide customers at any hour."),
-          ("05", "Workflow Automation", "Reliable workflows that move information between the tools your business already uses."),
-          ("06", "Custom Software", "Focused internal tools and customer-facing applications built for your unique requirements.")
-        ] %}
-        {% for number, title, description in services %}
-          <article class="group bg-white p-8 transition hover:bg-indigo-50/70">
-            <p class="text-sm font-bold text-indigo-600">{{ number }}</p>
-            <h3 class="mt-8 text-xl font-bold">{{ title }}</h3>
-            <p class="mt-3 leading-7 text-slate-600">{{ description }}</p>
-          </article>
-        {% endfor %}
+      <div class="diagnosis-panel reveal" aria-live="polite">
+        <span class="diagnosis-label" data-diagnosis-label>Digital presence diagnosis</span>
+        <h3 data-diagnosis-title>Your website should create clarity before the first conversation.</h3>
+        <p data-diagnosis-copy>We examine structure, speed, search foundations, messaging, conversion paths, and maintainability—then design a digital experience around what customers actually need.</p>
+        <div class="deliverables" data-deliverables><span>Experience redesign</span><span>Technical SEO</span><span>Lead pathways</span><span>Performance review</span></div>
+        <div class="hero-actions"><a class="button-primary" href="{{ url_for('contact') }}">Discuss this problem</a><a class="button-secondary" href="{{ url_for('services') }}">Explore the capability</a></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="industries" class="border-y border-white/10 bg-slate-900 py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-        <div>
-          <p class="text-sm font-bold uppercase tracking-widest text-indigo-400">Who we serve</p>
-          <h2 class="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">Grounded in the way your industry works.</h2>
-          <p class="mt-6 text-lg leading-8 text-slate-400">Good technology starts with understanding the people, processes, and expectations behind your business.</p>
-        </div>
-        <ul class="grid gap-4 sm:grid-cols-2" aria-label="Industries served">
-          {% for industry in ["Construction Companies", "Law Firms", "Medical Offices", "Local Businesses", "Small and Medium Businesses"] %}
-            <li class="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-5 font-semibold text-slate-100">
-              <span class="grid size-8 shrink-0 place-items-center rounded-full bg-indigo-500/15 text-indigo-300" aria-hidden="true">✓</span>
-              {{ industry }}
-            </li>
-          {% endfor %}
-        </ul>
-        <a href="{{ url_for('industries') }}" class="inline-flex rounded font-semibold text-indigo-300 hover:text-white">See how we support your industry <span class="ml-2" aria-hidden="true">&rarr;</span></a>
-      </div>
+<section class="capabilities">
+  <div class="section-shell">
+    <p class="section-kicker reveal">One connected partner</p>
+    <h2 class="section-title reveal">From first impression<br>to intelligent operation.</h2>
+    <div class="capability-rail">
+      <article class="capability reveal"><h3>Websites + search growth</h3><p>Fast, credible digital experiences with technical SEO and clear paths from discovery to inquiry.</p><div class="mini-visual"><div class="mini-bars"><i style="height:40%"></i><i></i><i></i><i></i><i></i></div></div></article>
+      <article class="capability reveal"><h3>Data repair + reporting</h3><p>Clean, structure, validate, and connect information so teams can make decisions with confidence.</p><div class="mini-visual"><div class="flow-map"><span class="flow-node">CSV</span><span class="flow-link"></span><span class="flow-node">✓</span></div></div></article>
+      <article class="capability reveal"><h3>Automation</h3><p>Remove repeated handoffs, connect tools, and keep operational work moving without constant supervision.</p><div class="mini-visual"><div class="flow-map"><span class="flow-node">1</span><span class="flow-link"></span><span class="flow-node">2</span><span class="flow-link"></span><span class="flow-node">3</span></div></div></article>
+      <article class="capability reveal"><h3>AI upgrades</h3><p>Chatbots, voice assistants, document intelligence, knowledge tools, and human-reviewed content systems.</p><div class="mini-visual"><div class="chat-message ai">How can I help?</div><div class="chat-message user">Qualify this inquiry.</div></div></article>
+      <article class="capability reveal"><h3>Technical gap assessment</h3><p>A structured review of your website, data, workflows, software, AI readiness, and search visibility—with priorities and a practical roadmap.</p><a class="button-secondary" href="{{ url_for('contact') }}">Request an assessment ↗</a></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="why-us" class="bg-white py-24 text-slate-900 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
-        <div>
-          <p class="text-sm font-bold uppercase tracking-widest text-indigo-600">Why AI Solutions</p>
-          <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">Clear strategy. Thoughtful execution. No unnecessary complexity.</h2>
-          <p class="mt-6 text-lg leading-8 text-slate-600">We keep the focus on outcomes your team and customers can feel—not technology for technology’s sake.</p>
-        </div>
-        <div class="space-y-8">
-          {% set reasons = [
-            ("Business-first thinking", "Every recommendation begins with your goals, constraints, and day-to-day operations."),
-            ("Built around your team", "We design solutions people can understand, adopt, and rely on."),
-            ("A practical path forward", "Clear scope, direct communication, and purposeful technology from start to finish.")
-          ] %}
-          {% for title, description in reasons %}
-            <article class="border-l-2 border-indigo-500 pl-6">
-              <h3 class="text-xl font-bold">{{ title }}</h3>
-              <p class="mt-2 leading-7 text-slate-600">{{ description }}</p>
-            </article>
-          {% endfor %}
+<section class="ai-demo">
+  <div class="section-shell">
+    <p class="section-kicker reveal">Applied AI lab</p>
+    <h2 class="section-title reveal">AI people can actually use.</h2>
+    <div class="demo-window reveal">
+      <div class="demo-tabs" role="tablist" aria-label="AI examples">
+        <button class="demo-tab active" role="tab" aria-selected="true" data-demo="chat">Customer chatbot</button>
+        <button class="demo-tab" role="tab" aria-selected="false" data-demo="voice">Voice assistant</button>
+        <button class="demo-tab" role="tab" aria-selected="false" data-demo="avatar">Content avatar</button>
+      </div>
+      <div class="demo-canvas">
+        <div class="demo-story"><span class="diagnosis-label" data-demo-label>Illustrative AI conversation</span><h3 data-demo-title>Helpful first response. Clear human handoff.</h3><p data-demo-copy>A business-trained assistant answers approved questions, gathers useful context, and moves the conversation to the right person when judgment is required.</p></div>
+        <div class="chat-shell" data-demo-visual>
+          <div class="chat-message ai">Hi—are you looking for a new website, automation, or an AI upgrade?</div>
+          <div class="chat-message user">We spend hours qualifying the same inquiries.</div>
+          <div class="chat-message ai">I can collect project type, budget range, and timing—then route qualified requests to your team.</div>
+          <div class="chat-message ai typing" aria-label="Assistant is typing"><i></i><i></i><i></i></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="consultation" class="bg-indigo-600 py-20 sm:py-24">
-    <div class="mx-auto max-w-5xl px-6 text-center lg:px-8">
-      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-5xl">Let’s find the right next step for your business.</h2>
-      <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-indigo-100">Bring us the process that slows you down, the idea you want to launch, or the customer experience you want to improve. We’ll help you make sense of what’s possible.</p>
-      <a href="{{ url_for('contact') }}" class="mt-10 inline-flex rounded-lg bg-white px-7 py-4 font-semibold text-indigo-700 shadow-xl transition hover:bg-indigo-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Book a Free Consultation</a>
+<section class="process">
+  <div class="section-shell">
+    <p class="section-kicker">How we work</p><h2 class="section-title">Less guessing.<br>More evidence.</h2>
+    <div class="process-track">
+      {% for number, title, text in [("01","Listen","Understand the business, users, systems, and friction."),("02","Measure","Review workflows, data, technology, and evidence."),("03","Design","Define the right experience, architecture, and plan."),("04","Execute","Build in visible milestones with review and validation."),("05","Improve","Measure adoption, remove friction, and evolve the system.")] %}
+      <article class="process-step reveal"><span>{{ number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></article>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="cta-panel reveal">
+    <div class="cta-copy"><p class="section-kicker">Your next step</p><h2>Bring us the friction.</h2><p>In a focused strategy call, we will clarify the problem, discuss what evidence matters, and identify the most useful next step.</p><div class="hero-actions"><a class="button-primary" href="{{ url_for('book') }}">Book a strategy call</a><a class="button-secondary" href="{{ url_for('contact') }}">Request a gap assessment</a></div></div>
+    <div class="cta-calendar" aria-hidden="true"><div class="calendar-card"><strong>Choose a day</strong><div class="calendar-grid"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>{% for day in range(1,29) %}<span class="{{ 'active' if day == 14 else '' }}">{{ day }}</span>{% endfor %}</div></div><div class="time-card"><strong>Available</strong><button>9:30</button><button class="active">11:00</button><button>2:30</button><button>4:00</button></div></div>
+  </div>
+</section>
 {% endblock %}
