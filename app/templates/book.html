@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block meta_description %}Book a focused strategy conversation with AI Solutions about your website, data, automation, AI, SEO, or technical gaps.{% endblock %}
+{% block content %}
+<section class="final-cta" style="padding-top:130px;min-height:75vh">
+  <div class="section-shell">
+    <p class="section-kicker">30-minute strategy conversation</p>
+    <h1 class="section-title" style="max-width:900px">Bring the problem.<br>Leave with a clearer next step.</h1>
+    <p class="hero-copy" style="margin-top:24px">We will discuss what is slowing the business down, what evidence matters, and whether the right next move is a website, data repair, automation, an AI upgrade, search growth, or a deeper technical assessment.</p>
+    {% if booking_page_url %}
+    <div class="demo-window" style="margin-top:50px;overflow:hidden">
+      <iframe src="{{ booking_page_url }}" title="Book a strategy call with AI Solutions" loading="lazy" style="width:100%;height:780px;border:0;background:white"></iframe>
+    </div>
+    {% else %}
+    <div class="cta-panel" style="margin-top:50px">
+      <div class="cta-copy"><p class="section-kicker">Calendar connection in progress</p><h2 style="font-size:clamp(2.2rem,4vw,4rem)">Online scheduling is being connected.</h2><p>The booking calendar is not live on this preview yet. Send a short note about the challenge and we will coordinate a time directly.</p><a class="button-primary" href="{{ url_for('contact') }}">Contact AI Solutions</a></div>
+      <div class="cta-calendar" aria-hidden="true"><div class="calendar-card"><strong>Strategy call</strong><p style="color:#64748b;line-height:1.7">A focused conversation about your business, current systems, and practical opportunities.</p><div class="deliverables"><span>30 minutes</span><span>No sales pressure</span><span>Clear next steps</span></div></div><div class="time-card"><strong>Topics</strong><button>Website</button><button>Data</button><button>Automation</button><button>AI</button></div></div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
