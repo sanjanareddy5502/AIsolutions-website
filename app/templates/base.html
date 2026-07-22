@@ -1,45 +1,63 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{% block meta_description %}Practical websites, automation, and AI solutions built around your business.{% endblock %}">
+  <meta name="description" content="{% block meta_description %}Premium websites, automation, data systems, and practical AI solutions for growing businesses.{% endblock %}">
+  <meta name="theme-color" content="#f5f3ee">
   <title>{% block title %}{{ page_title ~ " | " if page_title else "" }}AI Solutions{% endblock %}</title>
   <link rel="icon" href="{{ url_for('static', path='/images/favicon.svg') }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ url_for('static', path='/css/output.css') }}">
-  <script src="{{ url_for('static', path='/js/main.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/luxury.css') }}">
+  <script src="{{ url_for('static', path='/js/main.js') }}" type="module"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased">
-  <a href="#main-content" class="sr-only z-50 rounded-md bg-white px-4 py-2 font-semibold text-indigo-950 focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to main content</a>
-  <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur-lg">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Primary navigation">
-      <a href="{{ url_for('home') }}" class="inline-flex items-center gap-3 rounded-md font-semibold tracking-tight text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400">
-        <span class="grid size-9 place-items-center rounded-lg bg-indigo-500 text-sm font-bold shadow-lg shadow-indigo-500/20" aria-hidden="true">AI</span><span>AI Solutions</span>
+<body class="luxury-body">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="luxury-header" data-site-header>
+    <nav class="luxury-nav" aria-label="Primary navigation">
+      <a class="luxury-brand" href="{{ url_for('home') }}" aria-label="AI Solutions home">
+        <span class="brand-glyph" aria-hidden="true"></span>
+        <span>AI Solutions</span>
       </a>
-      <div class="hidden items-center gap-8 md:flex">
+
+      <div class="nav-links">
         {% for key, endpoint, label in [("services", "services", "Services"), ("industries", "industries", "Industries"), ("about", "about", "About")] %}
-        <a href="{{ url_for(endpoint) }}" {% if current_page == key %}aria-current="page"{% endif %} class="rounded text-sm font-medium transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400 {{ 'text-white underline decoration-indigo-400 decoration-2 underline-offset-8' if current_page == key else 'text-slate-300 hover:text-white' }}">{{ label }}</a>
+          <a href="{{ url_for(endpoint) }}" {% if current_page == key %}aria-current="page"{% endif %}>{{ label }}</a>
         {% endfor %}
-        <a href="{{ url_for('contact') }}" {% if current_page == "contact" %}aria-current="page"{% endif %} class="rounded-lg bg-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 {{ 'ring-2 ring-white ring-offset-2 ring-offset-slate-950' if current_page == 'contact' else '' }}">Book a Free Consultation</a>
       </div>
-      <button type="button" class="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-indigo-400 md:hidden" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span class="sr-only">Open navigation menu</span><span class="flex w-5 flex-col gap-1.5" aria-hidden="true"><span class="h-0.5 bg-current"></span><span class="h-0.5 bg-current"></span><span class="h-0.5 bg-current"></span></span></button>
+
+      <a class="nav-action" href="{{ url_for('contact') }}">Start a project <span aria-hidden="true">↗</span></a>
+
+      <button class="nav-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+        <span class="sr-only">Open navigation menu</span><i></i><i></i>
+      </button>
     </nav>
-    <div id="mobile-menu" class="hidden border-t border-white/10 px-6 py-5 md:hidden" data-mobile-menu>
-      <div class="mx-auto flex max-w-7xl flex-col gap-1">
-        {% for key, endpoint, label in [("services", "services", "Services"), ("industries", "industries", "Industries"), ("about", "about", "About")] %}
-        <a href="{{ url_for(endpoint) }}" {% if current_page == key %}aria-current="page"{% endif %} class="rounded-lg px-3 py-3 font-medium hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-indigo-400 {{ 'bg-white/10 text-white' if current_page == key else 'text-slate-200' }}">{{ label }}</a>
-        {% endfor %}
-        <a href="{{ url_for('contact') }}" {% if current_page == "contact" %}aria-current="page"{% endif %} class="mt-3 rounded-lg bg-indigo-500 px-4 py-3 text-center font-semibold text-white focus-visible:outline-2 focus-visible:outline-indigo-300">Book a Free Consultation</a>
-      </div>
+
+    <div class="mobile-nav" id="mobile-menu" hidden data-mobile-menu>
+      <a href="{{ url_for('services') }}">Services</a>
+      <a href="{{ url_for('industries') }}">Industries</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('contact') }}">Start a project</a>
     </div>
   </header>
-  <main id="main-content">{% block content %}{% endblock %}</main>
-  <footer class="border-t border-white/10 bg-slate-950">
-    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-2 lg:px-8">
-      <div><a href="{{ url_for('home') }}" class="inline-flex items-center gap-3 rounded-md font-semibold text-white focus-visible:outline-2 focus-visible:outline-indigo-400"><span class="grid size-9 place-items-center rounded-lg bg-indigo-500 text-sm font-bold" aria-hidden="true">AI</span><span>AI Solutions</span></a><p class="mt-4 max-w-md text-sm leading-6 text-slate-400">Digital systems that make your business easier to run, easier to find, and ready to grow.</p></div>
-      <div class="md:text-right"><nav aria-label="Footer navigation" class="flex flex-wrap gap-x-5 gap-y-2 md:justify-end"><a href="{{ url_for('services') }}" class="text-sm text-slate-300 hover:text-white">Services</a><a href="{{ url_for('industries') }}" class="text-sm text-slate-300 hover:text-white">Industries</a><a href="{{ url_for('about') }}" class="text-sm text-slate-300 hover:text-white">About</a><a href="{{ url_for('contact') }}" class="text-sm text-indigo-300 hover:text-indigo-200">Contact</a></nav><a href="{{ url_for('contact') }}" class="mt-4 inline-block rounded text-sm font-medium text-indigo-300 hover:text-indigo-200 focus-visible:outline-2 focus-visible:outline-indigo-400">Start a conversation <span aria-hidden="true">&rarr;</span></a></div>
+
+  <main class="luxury-main" id="main-content">{% block content %}{% endblock %}</main>
+
+  <footer class="luxury-footer">
+    <div class="footer-grid">
+      <div>
+        <a class="luxury-brand" href="{{ url_for('home') }}"><span class="brand-glyph" aria-hidden="true"></span><span>AI Solutions</span></a>
+        <p class="footer-tagline">Beautiful digital experiences, intelligent systems, and practical AI—designed around the way your business actually works.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('industries') }}">Industries</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+      </nav>
     </div>
-    <div class="border-t border-white/10"><div class="mx-auto max-w-7xl px-6 py-6 text-sm text-slate-500 lg:px-8"><p>&copy; 2026 AI Solutions. Built for better business.</p></div></div>
+    <div class="footer-bottom"><span>© 2026 AI Solutions</span><span>Websites · Automation · AI · Data</span></div>
   </footer>
 </body>
 </html>
